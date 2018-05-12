@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<style>
+
+.box {
+	margin: 0;
+	padding: 0;
+		margin: 50px auto;
+		width: 200px;
+		height: 200px;
+		position: relative;
+	}
+	.box div {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+	}
+	.a {
+		background: #FF0000;
+		color: #fff;
+		text-align: center ;
+		line-height: 190px;
+		font-size: 20px;
+	}
+	.b {
+		font-size: 16px;
+		line-height: 80px;
+		background:#FF4DFF;
+		transition: 5s;
+		color: #fff;
+		padding: 50px;
+		box-sizing: border-box;
+		transform-origin: 20px 30px;
+		transform-origin: left;
+		/* transform-origin: top; */
+	}
+	.box:hover .b {
+		transform: rotateY(160deg);
+	}
+
+
+
+/* <style type="text/css">  */ 
+
+        #frame {/*----------图片轮播相框容器----------*/  
+            margin-left: -50px;
+            margin-top: 210px;
+            position: absolute; /*--绝对定位，方便子元素的定位*/  
+            width: 300px;  
+            height: 200px;  
+            overflow: hidden;/*--相框作用，只显示一个图片---*/  
+            border-radius:5px;  
+        }  
+        #dis {/*--绝对定位方便li图片简介的自动分布定位---*/  
+            position: absolute;  
+            left: -50px;  
+            top: -10px;  
+            opacity: 0.5;  
+        }  
+        #dis li {  
+            display: inline-block;  
+            width: 200px;  
+            height: 20px;  
+            margin: 0 50px;  
+            float: left;  
+            text-align: center;  
+            color: #fff;  
+            border-radius: 10px;  
+            background: #000;  
+        }  
+        #photos img {  
+            float: left;  
+            /* width:300px;   */
+            height:200px;  
+        }  
+        #photos {/*---设置总的图片宽度--通过位移来达到轮播效果----*/  
+            position: absolute;z-index:9px;  
+            width: calc(300px * 5);/*---修改图片数量的话需要修改下面的动画参数*/  
+        }  
+        .play{  
+            animation: ma 17s ease-out infinite alternate;/**/  
+        }  
+        @keyframes ma {/*---每图片切换有两个阶段：位移切换和静置。中间的效果可以任意定制----*/  
+            0%,20% {        margin-left: 0px;       }  
+            25%,40% {       margin-left: -300px;    }  
+            45%,60% {       margin-left: -600px;    }  
+            65%,80% {       margin-left: -900px;    }  
+            85%,100% {      margin-left: -1200px;   }  
+        }  
+        .num{  
+            position:absolute;z-index:10;  
+            display:inline-block;  
+            right:9px;top:175px;  
+            border-radius:100%;  
+            background:#A64DFF;  
+            width:19px;height:19px;  
+            line-height:20px;  
+            cursor:pointer;  
+            color:#fff;  
+            text-align:center;  
+            opacity:0.7;  
+        }  
+        .num:hover{background:#00f;}  
+        .num:hover,#photos:hover{animation-play-state:paused;}  
+        .num:nth-child(2){margin-right:30px}  
+        .num:nth-child(3){margin-right:60px}  
+        .num:nth-child(4){margin-right:90px}  
+        .num:nth-child(5){margin-right:120px}  
+        #a1:hover ~ #photos{animation: ma1 .0.5s ease-out forwards;}  
+        #a2:hover ~ #photos{animation: ma2 .0.5s ease-out forwards;}  
+        #a3:hover ~ #photos{animation: ma3 .0.5s ease-out forwards;}  
+        #a4:hover ~ #photos{animation: ma4 .0.5s ease-out forwards;}  
+        #a5:hover ~ #photos {animation: ma5 .0.5s ease-out forwards;}  
+        @keyframes ma1 {0%{margin-left:-1200px;}100%{margin-left:-0px;} }  
+        @keyframes ma2 {0%{margin-left:-1200px;}100%{margin-left:-300px;}   }  
+        @keyframes ma3 {100%{margin-left:-600px;}   }  
+        @keyframes ma4 {100%{margin-left:-900px;}   }  
+        @keyframes ma5 {100%{margin-left:-1200px;}  }  
+
+        .num{
+        	font-size: 10px;
+        }
+
+
+.z{
+	margin-top: 240px;
+	margin-left: 560px;
+}
+
+
+
+	
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="a">我喜欢你</div>
+		<div class="b">明人不说暗话</div>
+
+<div id="frame" >  
+        <a id="a1" class="num">5</a>  
+        <a id="a2" class="num">4</a>  
+        <a id="a3" class="num">3</a>  
+        <a id="a4" class="num">2</a>  
+        <a id="a5" class="num">1</a>  
+        <div id="photos" class="play">  
+        	<img src="images/1.png">
+        	<img src="images/2.png">
+        	<img src="images/3.jpg">
+        	<img src="images/4.jpg">
+        	<img src="images/8.jpg">
+        	<img src="images/7.jpg">
+        </div>
+      </div>
+</div>
+<div class="z">
+	<p>愿你踮踮脚就能嗅到彩虹香味
+	<p>   愿你荆棘路变玫瑰</p>
+	<p>愿你的日子会像白日梦一样美</p>
+	<p>愿你遇到的爱都可贵</p>
+	<p>愿陪伴你的人无论变成谁</p>
+	<p>都像我一样真心相对</p>
+</div>
+
+</body>
+</html>
